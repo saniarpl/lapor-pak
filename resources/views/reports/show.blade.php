@@ -103,7 +103,7 @@
                     <form method="POST" action="{{ route('reports.worker', $report) }}" class="space-y-2">
                         @csrf
                         @method('PATCH')
-                        <select name="worker_id" required class="w-full border rounded px-3 py-2 text-sm">
+                        <select name="worker_id" required class="w-full border rounded px-3 py-2 text-sm" required>
                             <option value="">Pilih petugas</option>
                             @foreach ($workers as $w)
                                 <option value="{{ $w->id }}" @selected($report->worker_id === $w->id)>{{ $w->name }}</option>
